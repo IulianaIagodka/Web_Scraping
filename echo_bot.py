@@ -1,7 +1,7 @@
 import json
 import requests
 
-TOKEN = "put here your token"
+TOKEN = "put_your_token"
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 
 
@@ -35,7 +35,7 @@ def send_message(text, chat_id):
     url = URL + "sendMessage?text={}&chat_id={}".format(text, chat_id)
     get_url(url)
 
-
 text, chat = get_last_chat_id_and_text(get_updates())
-send_message(text, chat)
+#send_message(text, chat)
+send_message(f"{text} ?", chat)
 print (text)
